@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medimart Sign In</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>WELCOME TO MEDIMART...!</h1>
+            <a href="#">CREATE AN ACCOUNT</a>
+        </div>
+        <div class="form-container">
+            <form id="signin-form">
+                <label for="email">ENTER YOU EMAIL</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email">
+
+                <label for="password">PASSWORD</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password">
+
+                <a href="#" class="phone-signin">SIGN IN USING PHONE NUMBER</a>
+
+                <button type="submit" class="signin-btn" id="signin-btn">SIGN IN</button>
+            </form>
+            <div class="social-login">
+                <button class="social-btn google" id="google-signin">SIGN IN WITH GOOGLE</button>
+                <button class="social-btn facebook" id="facebook-signin">SIGN IN WITH FACEBOOK</button>
+                <button class="social-btn apple" id="apple-signin">SIGN IN WITH APPLE</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const signinBtn = document.getElementById('signin-btn');
+            const googleSignin = document.getElementById('google-signin');
+            const facebookSignin = document.getElementById('facebook-signin');
+            const appleSignin = document.getElementById('apple-signin');
+
+            function redirectToOTP() {
+                window.location.href = 'otp-verification.html';
+            }
+
+            signinBtn.addEventListener('click', function(event) {
+                event.preventDefault(); // Prevent form submission (for now)
+                redirectToOTP();
+            });
+
+            googleSignin.addEventListener('click', redirectToOTP);
+            facebookSignin.addEventListener('click', redirectToOTP);
+            appleSignin.addEventListener('click', redirectToOTP);
+        });
+    </script>
+</body>
+</html>
